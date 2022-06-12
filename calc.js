@@ -8,8 +8,11 @@ app.get("/", function (req, res) {
 });
 
 app.post("/", function (req, res) {
-  console.log(req.body.ln);
-  res.send("thanks for posting ");
+var a=Number(req.body.fn)
+var b=Number(req.body.ln)
+var c= a+b
+console.log(c)
+  res.send("Result is :  "+ c);
 });
 
 app.listen(3000, function () {
