@@ -15,6 +15,24 @@ console.log(c)
   res.send("Result is :  "+ c);
 });
 
+
+app.get('/bmiCalc',function(req,res){
+
+console.log('Get bmi calc')
+  res.sendFile(__dirname+'/bmiCalc.html')
+})
+
+
+app.post('/bmiCalc',function(req,res){
+  console.log('bmi post its working')
+  //console.log(req.body)
+  var a = parseFloat(req.body.Height)
+  //console.log(a) 
+   var b = parseFloat(req.body.Weight)
+  var c= b/(a*b)
+  res.send(c)
+})
+
 app.listen(3000, function () {
   console.log("3000 port in successfully Active");
 });
